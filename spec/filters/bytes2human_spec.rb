@@ -7,7 +7,7 @@ describe LogStash::Filters::Bytes2Human do
   describe "To Bytes" do
     # The logstash config.
     config <<-CONFIG
-      filter {  bytes2human { convert => [ "size", "bytes" ] } }
+      filter {  bytes2human { convert => { "size" => "bytes" } } }
     CONFIG
   
     describe "should convert from kb" do
@@ -58,7 +58,7 @@ describe LogStash::Filters::Bytes2Human do
   describe "To Human" do
     # The logstash config.
     config <<-CONFIG
-      filter {  bytes2human { convert => [ "size", "human" ] } }
+      filter {  bytes2human { convert => { "size" => "human" } } }
     CONFIG
   
     describe "should convert integer to KB" do

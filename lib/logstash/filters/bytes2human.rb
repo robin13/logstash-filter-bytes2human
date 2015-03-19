@@ -16,7 +16,7 @@ class LogStash::Filters::Bytes2Human < LogStash::Filters::Base
   #     filter {
   #       bytes2human {
   #         # Converts 'data_size' field from 2.4 KB to 2400
-  #         convert => [ "data_size", "bytes" ]
+  #         convert => { "data_size" => "bytes" }
   #       }
   #     }
   #     
@@ -25,7 +25,7 @@ class LogStash::Filters::Bytes2Human < LogStash::Filters::Base
   #     filter {
   #       bytes2human {
   #         # Converts 'data_size' field from 123456 to "123.456 MB"
-  #         convert => [ "data_size", "human" ]
+  #         convert => { "data_size" => "human" }
   #       }
   #     }
   config :convert, :validate => :hash
