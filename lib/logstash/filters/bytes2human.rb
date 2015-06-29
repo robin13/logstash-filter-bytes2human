@@ -8,7 +8,6 @@ require "logstash/namespace"
 
 class LogStash::Filters::Bytes2Human < LogStash::Filters::Base
   config_name "bytes2human"
-  milestone 1
 
   # The fields which should be converted, and the direction to convert (human, bytes)
   # Example:

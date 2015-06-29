@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
-  s.name            = 'logstash-filter-bytest2human'
-  s.version         = '0.1'
+  s.name            = 'logstash-filter-bytes2human'
+  s.version         = '0.1.0'
   s.licenses        = ['Apache License (2.0)']
   s.summary         = "Convert to and from human readable bytes."
   s.description     = "This gem is a logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/plugin install gemname. This gem is not a stand-alone program"
