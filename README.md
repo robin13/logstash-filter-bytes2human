@@ -1,4 +1,10 @@
-# Logstash Plugin
+# logstash-filter-bytes2human
+
+The bytes2human filter allows conversion from text (e.g. 2.5 GB) to integer bytes
+or from integer bytes to human readable form
+It understands MB, MiB etc.
+
+# Logstash plugins
 
 This is a plugin for [Logstash](https://github.com/elastic/logstash).
 
