@@ -1,17 +1,27 @@
 Gem::Specification.new do |s|
 
   s.name            = 'logstash-filter-bytes2human'
-  s.version         = '0.1.0'
+  s.version         = '0.2.0'
   s.licenses        = ['Apache License (2.0)']
   s.summary         = "Convert to and from human readable bytes."
   s.description     = "This gem is a logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/plugin install gemname. This gem is not a stand-alone program"
-  s.authors         = ["Elastics.co"]
-  s.email           = 'info@elastics.co'
-  s.homepage        = "http://www.elastics.co/guide/en/logstash/current/index.html"
-  s.require_paths = ["lib"]
+  s.authors         = ["Elastic.co"]
+  s.email           = 'info@elastic.co'
+  s.homepage        = "http://www.elastic.co/guide/en/logstash/current/index.html"
+  s.require_paths   = ["lib"]
 
   # Files
-  s.files = `git ls-files`.split($\)
+  s.files = Dir[
+    'lib/**/*',
+    'spec/**/*',
+    'vendor/**/*',
+    '*.gemspec',
+    '*.md',
+    'CONTRIBUTORS',
+    'Gemfile',
+    'LICENSE',
+    'NOTICE.TXT'
+  ]
 
   # Tests
   s.test_files = s.files.grep(%r{^(test|spec|features)/})
@@ -20,7 +30,7 @@ Gem::Specification.new do |s|
   s.metadata = { "logstash_plugin" => "true", "logstash_group" => "filter" }
 
   # Gem dependencies
-  s.add_runtime_dependency "logstash-core", '>= 1.4.0', '< 2.0.0'
+  s.add_runtime_dependency "logstash-core", '>= 2.1.0', '< 3.0.0'
 
   s.add_development_dependency 'logstash-devutils'
 end
