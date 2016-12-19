@@ -51,7 +51,7 @@ class LogStash::Filters::Bytes2Human < LogStash::Filters::Base
   def convert(event)
     @convert.each do |field, direction|
       next unless event.include?(field)
-      original = event[field]
+      original = event.get(field)
       
       if original.nil?
         next
@@ -72,7 +72,7 @@ class LogStash::Filters::Bytes2Human < LogStash::Filters::Base
           value = Filesize.from(original).to_i;
         end
       end
-      event[field] = value
+      event.set(field, value)
     end
   end # def convert
 
